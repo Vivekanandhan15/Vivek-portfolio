@@ -20,12 +20,14 @@ document.querySelectorAll('nav a').forEach(link => {
 
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const icon = themeToggle.querySelector('i');
-    icon.classList.toggle('fa-moon');
-    icon.classList.toggle('fa-sun');
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const icon = themeToggle.querySelector('i');
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
+    });
+}
 
 // Parallax Effect
 const heroContent = document.getElementById('heroContent');
@@ -84,10 +86,10 @@ window.addEventListener('wheel', (e) => {
     const sectionCenter = rect.top + rect.height / 2;
     const viewportCenter = window.innerHeight / 2;
     const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
-    
+
     // Check if section is centered (within 150px of viewport center for better locking)
     const isCentered = distanceFromCenter < 150;
-    
+
     if (isCentered) {
         // Scrolling down
         if (e.deltaY > 0) {
@@ -96,22 +98,22 @@ window.addEventListener('wheel', (e) => {
                 e.preventDefault();
                 allowScrollAway = false;
                 scrollAwayAttempts = 0;
-                
+
                 if (!isScrolling) {
                     accumulatedDelta += e.deltaY;
                     clearTimeout(scrollTimeout);
-                    
+
                     if (Math.abs(accumulatedDelta) > deltaThreshold) {
                         isScrolling = true;
                         currentSlide++;
                         updateCarousel();
                         accumulatedDelta = 0;
-                        
+
                         setTimeout(() => {
                             isScrolling = false;
                         }, 900);
                     }
-                    
+
                     scrollTimeout = setTimeout(() => {
                         accumulatedDelta = 0;
                     }, 150);
@@ -121,7 +123,7 @@ window.addEventListener('wheel', (e) => {
                 if (!allowScrollAway) {
                     e.preventDefault();
                     scrollAwayAttempts++;
-                    
+
                     // After threshold attempts, allow next scroll to pass through
                     if (scrollAwayAttempts >= scrollAwayThreshold) {
                         allowScrollAway = true;
@@ -136,25 +138,25 @@ window.addEventListener('wheel', (e) => {
             // Reset scroll away flag when scrolling up
             allowScrollAway = false;
             scrollAwayAttempts = 0;
-            
+
             // Always prevent scroll up when in carousel section
             e.preventDefault();
-            
+
             if (currentSlide > 0 && !isScrolling) {
                 accumulatedDelta += e.deltaY;
                 clearTimeout(scrollTimeout);
-                
+
                 if (Math.abs(accumulatedDelta) > deltaThreshold) {
                     isScrolling = true;
                     currentSlide--;
                     updateCarousel();
                     accumulatedDelta = 0;
-                    
+
                     setTimeout(() => {
                         isScrolling = false;
                     }, 900);
                 }
-                
+
                 scrollTimeout = setTimeout(() => {
                     accumulatedDelta = 0;
                 }, 150);
@@ -167,25 +169,28 @@ window.addEventListener('wheel', (e) => {
     }
 }, { passive: false });
 
-// Contact Form
-const submitBtn = document.getElementById('submitBtn');
-const formStatus = document.getElementById('formStatus');
+// Contact Form (Google Sheets Integration)
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzNteru7GWkAepXRSrtXepeQyQvLbwkfl_I_DrDJ0v0hjOQv1Up2n1p-ybvPhhVlMqN/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById('msg')
 
-submitBtn.addEventListener('click', () => {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    if (name && email && message) {
-        formStatus.textContent = 'Message sent successfully ✅';
-        setTimeout(() => {
-            formStatus.textContent = '';
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-        }, 3000);
-    }
-});
+if (form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully ✅";
+                setTimeout(function () {
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                msg.innerHTML = "Error sending message ❌";
+            })
+    })
+}
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

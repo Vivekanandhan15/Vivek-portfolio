@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivek - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -35,21 +36,22 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content" id="heroContent">
-            <h1>Hi, I'm <span class="accent">Vivekanandhan P</span> </h1>
-            <p>Aspiring Software Developer Student</p>
-
-            <div class="hero-visual" id="heroVisual">
-                <div class="avatar">
-                    <img src="assets/img/Vivekcrop.jpg" alt="Vivekanandhan P">
-                </div>
-                <!-- <div class="floating-badge badge-1">
+        <div id="heroContent" class="hero-content">
+            <h1>I'm <span class="accent">Vivekanandhan</span><br>
+                <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+            </h1>
+            <p>Aspiring Software Developer at Freshworks STS Academy. Transforming passion into professional
+                milestones through code.</p>
+            <div class="hero-btns">
+                <img src="assets/img/Vivekcrop.jpg" alt="Vivekanandhan P">
+            </div>
+            <!-- <div class="floating-badge badge-1">
                     <i class="fas fa-code"></i> Clean Code
                 </div> -->
-                <!-- <div class="floating-badge badge-2">
+            <!-- <div class="floating-badge badge-2">
                     <i class="fas fa-server"></i> Backend Logic
                 </div> -->
-                <div class="floating-badge badge-3">
+            <!-- <div class="floating-badge badge-3">
                     <i class="fas fa-database"></i> Database
                 </div>
                 <div class="floating-badge badge-4">
@@ -57,17 +59,16 @@
                 </div>
                 <div class="floating-badge badge-5">
                     <i class="fas fa-rocket"></i> Python
-                </div>
-                <!-- <div class="floating-badge badge-6">
+                </div> -->
+            <!-- <div class="floating-badge badge-6">
                     <i class="fas fa-cloud"></i> API Design
                 </div> -->
-                <div class="floating-badge badge-7">
+            <!-- <div class="floating-badge badge-7">
                     <i class="fas fa-terminal"></i> Git
                 </div>
                 <div class="floating-badge badge-8">
                     🚀 Problem Solver
-                </div>
-            </div>
+                </div> -->
         </div>
 
         <div class="bg-blobs">
@@ -79,18 +80,26 @@
 
 
     <!-- Projects -->
-    <section id="projects">
+    <section id="projects" data-reveal>
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-image">
+                <div class="project-image liquid-target">
                     <img src="./assets/DOZO.png" alt="DOZO Platform">
                 </div>
+                <div class="project-scanline"></div>
                 <div class="project-gradient gradient-purple"></div>
                 <div class="project-info">
-                    <h3>DOZO Platform</h3>
+                    <h3 class="glitch-text" data-text="DOZO PLATFORM">DOZO Platform</h3>
                     <p>Full-Stack Web Application</p>
                 </div>
+                <div class="tech-stack-cloud">
+                    <div class="tech-chip" title="Python"><i class="devicon-python-plain"></i></div>
+                    <div class="tech-chip" title="FastAPI"><i class="devicon-fastapi-plain"></i></div>
+                    <div class="tech-chip" title="PostgreSQL"><i class="devicon-postgresql-plain"></i></div>
+                    <div class="tech-chip" title="JavaScript"><i class="devicon-javascript-plain"></i></div>
+                </div>
+                <div class="god-ray"></div>
                 <div class="project-overlay">
                     <div class="text-center">
                         <div class="project-icon">
@@ -105,14 +114,21 @@
             </div>
 
             <div class="project-card">
-                <div class="project-image">
+                <div class="project-image liquid-target">
                     <img src="./assets/weatherapp.jpg" alt="Weather App">
                 </div>
+                <div class="project-scanline"></div>
                 <div class="project-gradient gradient-blue"></div>
                 <div class="project-info">
-                    <h3>Weather App</h3>
+                    <h3 class="glitch-text" data-text="WEATHER APP">Weather App</h3>
                     <p>Frontend application</p>
                 </div>
+                <div class="tech-stack-cloud">
+                    <div class="tech-chip" title="JavaScript"><i class="devicon-javascript-plain"></i></div>
+                    <div class="tech-chip" title="HTML5"><i class="devicon-html5-plain"></i></div>
+                    <div class="tech-chip" title="CSS3"><i class="devicon-css3-plain"></i></div>
+                </div>
+                <div class="god-ray"></div>
                 <div class="project-overlay">
                     <div class="text-center">
                         <div class="project-icon">
@@ -128,14 +144,21 @@
             </div>
 
             <div class="project-card">
-                <div class="project-image">
+                <div class="project-image liquid-target">
                     <img src="./assets/Todo.png" alt="Todo Application">
                 </div>
+                <div class="project-scanline"></div>
                 <div class="project-gradient gradient-green"></div>
                 <div class="project-info">
-                    <h3>Todo Application</h3>
+                    <h3 class="glitch-text" data-text="TODO APPLICATION">Todo Application</h3>
                     <p>Full stack Todo application</p>
                 </div>
+                <div class="tech-stack-cloud">
+                    <div class="tech-chip" title="Python"><i class="devicon-python-plain"></i></div>
+                    <div class="tech-chip" title="FastAPI"><i class="devicon-fastapi-plain"></i></div>
+                    <div class="tech-chip" title="PostgreSQL"><i class="devicon-postgresql-plain"></i></div>
+                </div>
+                <div class="god-ray"></div>
                 <div class="project-overlay">
                     <div class="text-center">
                         <div class="project-icon">
@@ -171,33 +194,54 @@
     </div><br><br>
 
     <!-- About -->
-    <section id="about">
-        <div class="about-content">
-            <div class="about-label">About Me</div>
-            <p class="about-text">
-                <span class="highlight">⚡ As an Aspiring software developer</span> passionate about building reliable
-                and scalable web applications.
-                I enjoy working on both frontend and backend logic, focusing on clean code, problem-solving, and
-                real-world functionality.
-                <span class="highlight">I believe good software is simple, efficient, and built with the user in
-                    mind.</span>
-            </p>
+    <section id="about" data-reveal>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-side">
+                    <img src="./assets/img/Journey_college.jpg" alt="My College" class="featured-about-img">
+                </div>
+                <div class="about-content">
+                    <div class="about-label">About Me</div>
+                    <p class="about-text">
+                        <span class="highlight">⚡ I'm a student</span> learning to build cool web apps.
+                        I enjoy working on both frontend and backend to keep my projects simple and useful.
+                        <span class="highlight">I believe good software should be easy for everyone to use.</span>
+                    </p>
+                    <p class="about-text"
+                        style="margin-top: 1.5rem; font-size: 1.15rem; border-left: 3px solid var(--accent-color); padding-left: 1.5rem; color: #bbb;">
+                        I am a Diploma student in Electronics and Communication Engineering (D.ECE) with a strong
+                        interest in software development. Alongside my academics, I actively pursue self-learning in web
+                        development and programming.
 
-            <div class="floating-text text-code">CODE</div>
-            <div class="floating-text text-build">BUILD</div>
+                        Currently, I am a student at Freshworks STS Software Academy, where I am strengthening my
+                        technical and problem-solving skills. I regularly participate in developer meetups to stay
+                        updated with industry trends and expand my network.
 
-            <div class="profile-mini">
-                <img src="assets/img/Vivekcrop.jpg" alt="Profile">
-                <div>
-                    <h4>Vivekanandhan P</h4>
-                    <span style="color: #888;">Aspiring Software Developer Student</span>
+                        I have worked on multiple projects, and I am currently developing a static website for an NGO as
+                        an ongoing project. I also practice coding on HackerRank and have earned badges through the
+                        Google Developer Program.
+
+                        Apart from technology, I was a state-level Silambam player. Though I am not competing at
+                        present, the discipline and dedication I developed through sports continue to shape my mindset.
+
+                        I am enthusiastic about learning, self-motivated, and deeply passionate about building a career
+                        in software development.
+                    </p>
+
+                    <div class="profile-mini">
+                        <img src="assets/img/Vivekcrop.jpg" alt="Profile">
+                        <div>
+                            <h4>Vivekanandhan P</h4>
+                            <span style="color: #888;">Aspiring Software Developer Student</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience">
+    <section id="experience" data-reveal>
         <div class="experience-grid">
             <div class="exp-intro">
                 <h2>LEARNING JOURNEY</h2>
@@ -228,8 +272,49 @@
         </div>
     </section><br><br><br>
 
+    <!-- 3D Fisheye Milestone Gallery -->
+    <section id="milestone-fisheye" data-reveal>
+        <div class="fisheye-container">
+            <div class="fisheye-track" id="fisheyeTrack">
+                <!-- Milestone 1: Academy -->
+                <div class="milestone-card-3d" data-title="Freshworks Academy"
+                    data-desc="The launchpad of my software engineering career.">
+                    <img src="assets/img/gallery_2.jpeg" alt="Freshworks Academy">
+                    <div class="card-glass-label">FOUNDATION</div>
+                </div>
+
+                <!-- Milestone 2: Team -->
+                <div class="milestone-card-3d" data-title="The Squad"
+                    data-desc="Collaboration and agile development with the Freshworks crew.">
+                    <img src="assets/img/gallery_7.jpeg" alt="Freshworks Team">
+                    <div class="card-glass-label">SQUAD</div>
+                </div>
+
+                <!-- Milestone 3: BSNL -->
+                <div class="milestone-card-3d" data-title="BSNL Networking"
+                    data-desc="Hands-on experience with networking infrastructure.">
+                    <img src="assets/img/gallery_9.jpeg" alt="BSNL Internship">
+                    <div class="card-glass-label">NETWORKING</div>
+                </div>
+
+                <!-- Milestone 4: Perspective -->
+                <div class="milestone-card-3d" data-title="Personal Growth"
+                    data-desc="Finding balance and clarity beyond the code.">
+                    <img src="assets/img/gallery_3.jpeg" alt="Vivek at Sea">
+                    <div class="card-glass-label">PERSPECTIVE</div>
+                </div>
+            </div>
+
+            <!-- Dynamic Info Overlay -->
+            <div class="fisheye-info">
+                <h3 id="fisheye-title">My Journey</h3>
+                <p id="fisheye-desc">Drag to explore the milestones</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Expertise Carousel -->
-    <section id="expertise-section">
+    <section id="expertise-section" data-reveal>
         <h2 class="section-title">I'm Good At</h2>
         <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack">
@@ -279,75 +364,153 @@
         </div>
     </section>
 
+    <!-- Achievements & Badges -->
+    <section id="achievements" data-reveal>
+        <h2 class="section-title">Achievements & Coding Badges</h2>
+        <div class="achievements-container">
+            <!-- HackerRank Badges -->
+            <div class="achievement-group">
+                <h3>HackerRank Milestones</h3>
+                <div class="badges-grid">
+                    <div class="badge-card hackerrank tilt-card">
+                        <div class="badge-icon"><i class="fab fa-hackerrank"></i></div>
+                        <div class="badge-info">
+                            <h4>Problem Solving</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>3-Star Coder</p>
+                        </div>
+                    </div>
+                    <div class="badge-card hackerrank tilt-card">
+                        <div class="badge-icon"><i class="fab fa-python"></i></div>
+                        <div class="badge-info">
+                            <h4>Python</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>3-Star Coder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 1.5rem;">
+                    <a href="https://www.hackerrank.com/profile/vivekanandhanp15" target="_blank" class="mini-btn">View
+                        HackerRank <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Google Developer Badges -->
+            <div class="achievement-group">
+                <h3>Google Developer Recognition</h3>
+                <div class="badges-grid">
+                    <div class="badge-card google tilt-card">
+                        <div class="badge-icon"><i class="fab fa-google"></i></div>
+                        <div class="badge-info">
+                            <h4>GDG Member</h4>
+                            <p>Google Developer Group Chennai</p>
+                        </div>
+                    </div>
+                    <div class="badge-card google tilt-card">
+                        <div class="badge-icon"><i class="fas fa-cloud"></i></div>
+                        <div class="badge-info">
+                            <h4>Cloud & NVIDIA</h4>
+                            <p>Community Member</p>
+                        </div>
+                    </div>
+                    <div class="badge-card google tilt-card">
+                        <div class="badge-icon"><i class="fas fa-users"></i></div>
+                        <div class="badge-info">
+                            <h4>WTM & GDG</h4>
+                            <p>Active Participant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 1.5rem;">
+                    <a href="https://developers.google.com/profile/u/113022528805628418469" target="_blank"
+                        class="mini-btn">View Developer Profile <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Skills -->
-    <section>
+    <section data-reveal>
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <div class="skill-icon">🐍</div>
+                <div class="skill-icon"><i class="devicon-python-plain colored"></i></div>
                 <div class="skill-name">Python</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">⚡</div>
+                <div class="skill-icon"><i class="devicon-fastapi-plain colored"></i></div>
                 <div class="skill-name">FastAPI</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🟨</div>
+                <div class="skill-icon"><i class="devicon-javascript-plain colored"></i></div>
                 <div class="skill-name">JavaScript</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🌐</div>
+                <div class="skill-icon"><i class="devicon-csharp-plain colored"></i></div>
+                <div class="skill-name">C#</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-mongodb-plain colored"></i></div>
+                <div class="skill-name">MongoDB</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-express-original"></i></div>
+                <div class="skill-name">Express.js</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-react-original colored"></i></div>
+                <div class="skill-name">React</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-nodejs-plain colored"></i></div>
+                <div class="skill-name">Node.js</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-html5-plain colored"></i></div>
                 <div class="skill-name">HTML5</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🎨</div>
+                <div class="skill-icon"><i class="devicon-css3-plain colored"></i></div>
                 <div class="skill-name">CSS3</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🐘</div>
+                <div class="skill-icon"><i class="devicon-postgresql-plain colored"></i></div>
                 <div class="skill-name">PostgreSQL</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🗄️</div>
-                <div class="skill-name">SQL Server</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">📦</div>
-                <div class="skill-name">Git</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🐙</div>
+                <div class="skill-icon"><i class="devicon-github-original"></i></div>
                 <div class="skill-name">GitHub</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">💻</div>
+                <div class="skill-icon"><i class="devicon-git-plain colored"></i></div>
+                <div class="skill-name">Git</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-vscode-plain colored"></i></div>
                 <div class="skill-name">VS Code</div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🔌</div>
+                <div class="skill-icon"><i class="fas fa-plug" style="color: #61dafb;"></i></div>
                 <div class="skill-name">REST API</div>
             </div>
-            <!-- <div class="skill-card">
-                <div class="skill-icon">🐧</div>
-                <div class="skill-name">Linux</div>
-            </div>
             <div class="skill-card">
-                <div class="skill-icon">🐳</div>
-                <div class="skill-name">Docker</div>
-            </div> -->
-            <div class="skill-card">
-                <div class="skill-icon">📋</div>
-                <div class="skill-name">JSON</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">⌨️</div>
+                <div class="skill-icon"><i class="fas fa-terminal" style="color: #4d4d4d;"></i></div>
                 <div class="skill-name">Terminal</div>
             </div>
         </div>
     </section>
 
     <!-- Resume -->
-    <section class="resume-section">
+    <section class="resume-section" data-reveal>
         <h2 class="section-title">Resume</h2>
         <p style="color: #888; margin-bottom: 2rem;">Download my resume to learn more about my education, skills, and
             projects.</p>
@@ -371,7 +534,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" data-reveal>
         <h2 class="section-title">Get In Touch</h2>
         <form class="contact-form" name="submit-to-google-sheet">
             <div class="form-group">
@@ -396,18 +559,30 @@
         <div class="footer-bg-text">WORK TOGETHER</div>
 
         <div class="hire-section">
-            <a href="https://github.com/Vivekanandhan15" target="_blank" class="social-circle social-left">
-                <i class="fab fa-github"></i>
-            </a>
+            <div class="social-links-wrapper">
+                <a href="https://github.com/Vivekanandhan15" target="_blank" class="social-circle" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
 
-            <a href="mailto:vivekanandhanp15@gmail.com" class="hire-btn">
-                Hire Me<br>Now
-            </a>
+                <a href="https://www.linkedin.com/in/vivekanandhan-p-962287395/" target="_blank" class="social-circle"
+                    title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
 
-            <a href="https://www.linkedin.com/in/vivekanandhan-p-962287395/" target="_blank"
-                class="social-circle social-right">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
+                <a href="mailto:vivekanandhanp15@gmail.com" class="hire-btn">
+                    Hire Me<br>Now
+                </a>
+
+                <a href="https://www.hackerrank.com/profile/vivekanandhanp15" target="_blank" class="social-circle"
+                    title="HackerRank">
+                    <i class="fab fa-hackerrank"></i>
+                </a>
+
+                <a href="https://developers.google.com/profile/u/113022528805628418469" target="_blank"
+                    class="social-circle" title="Google Developers">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
         </div>
 
         <div class="footer-bottom">
@@ -426,6 +601,17 @@
             </div>
         </div>
     </footer>
+    <!-- Liquid Distortion Filter -->
+    <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="liquid-distortion">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="1" result="warp" />
+                <feDisplacementMap in="SourceGraphic" in2="warp" scale="0" xChannelSelector="R" yChannelSelector="G"
+                    id="liquid-map" />
+            </filter>
+        </defs>
+    </svg>
+
     <script src="assets/js/script.js"></script>
 </body>
 

@@ -91,7 +91,7 @@ navLinksEl.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // ─── Typewriter Effect (Hero Role) ───────────
-const roles = ['Software Developer', 'Backend Engineer', 'FastAPI Builder', 'Problem Solver', 'Full-Stack Dev'];
+const roles = ['Aspiring Software Developer', 'Problem Solver', 'Full-Stack Dev'];
 const roleEl = document.getElementById('heroRole');
 let roleIdx = 0, charIdx = 0, isDeleting = false;
 
@@ -135,13 +135,41 @@ document.querySelectorAll('.section, .project-card, .highlight-card, .ach-card, 
     revealObserver.observe(el);
 });
 
-// ─── Smooth Scroll for all #hash links ────────
+// ─── Smooth Scroll (Slow & Controlled) ────────
+function slowScrollTo(targetSelector, duration = 1500) {
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+
+    const headerOffset = 80;
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
+        const targetId = link.getAttribute('href');
+        if (targetId !== "#") {
             e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            slowScrollTo(targetId, 1500);
         }
     });
 });

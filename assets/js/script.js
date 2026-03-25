@@ -91,7 +91,7 @@ navLinksEl.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // ─── Typewriter Effect (Hero Role) ───────────
-const roles = ['Aspiring Software Developer', 'Problem Solver', 'Full-Stack Dev'];
+const roles = ['Full-Stack Learner','Backend Explorer','Curious Builder'];
 const roleEl = document.getElementById('heroRole');
 let roleIdx = 0, charIdx = 0, isDeleting = false;
 
